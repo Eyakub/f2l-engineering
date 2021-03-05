@@ -1,46 +1,195 @@
+<!doctype html>
+<html lang="en">
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Coming Soon</title>
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link href="tools/style.css" rel="stylesheet" type="text/css" />
-<link href="tools/960.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script> 
-<script type="text/javascript" src="js/cufon-yui.js"></script>
-<script type="text/javascript" src="js/Clarendon_LT_Std_700.font.js"></script>
-<script type="text/javascript">
-	Cufon.replace('h1,h3', {fontFamily: 'Clarendon LT Std', hover:true})
-</script>
-</head>
-<body>
-<div id="shim"></div>
-<div id="content">
-	<div class="logo_box"><h1>F2L<br/>Engineering<br/>PTE. LTD.</h1></div>          
-	<div class="main_box">
-		<h2>Our website is coming soon.<br/><span>In the mean time connect with us with the information below</span></h2>
-		
-		<ul class="info">
-			<li>
-				<h3>P</h3>
-				<p>***-***-****<br/>***-***-****</p>
-			</li>
-			<li>
-				<h3>A</h3>
-				<p>11 SAM LEONG ROAD<br>#01-12<br>TRIO<br>SINGAPORE(207903)</p>
-			</li>
-			<li>
-				<h3>S</h3>
-				<p class="social">
-					<a href="#" class="tw"></a>
-					<a href="#" class="fb"></a>				
-					<a href="#" class="li"></a>
-				</p>
-			</li>
-		</ul>
-	</div>
-</div>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<link rel="stylesheet" href="tools/style.css">
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+	<title>F2L Engineering</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="background-color: #e3f2fd;">
+		<div class="container">
+			<a class="navbar-brand" href="#">F2L Engineering</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+				aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="#home">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#about">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#service">Service</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Team</a>
+					</li>
+					<!-- <li class="nav-item">
+						<a class="nav-link" href="#">Price</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Clients</a>
+					</li> -->
+					<li class="nav-item">
+						<a class="nav-link" href="#">Contact</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- section home -->
+	<section id="home">
+		<div>
+			<img src="images/bg01.jpg" class="d-block w-100 img-fluid" alt="">
+			<div class="center-content-home">
+				<h1>Welcome to <span class="company-name">F2L ENGINEERING PTE. LTD.</span></h1>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, quidem facilis! Laudantium delectus
+					vitae</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- section about -->
+	<section id="about">
+		<div class="container my-5 py-5">
+			<div class="row">
+				<div class="col-lg-4 col-md-5 col-sm-12">
+					<img src="images/about-company.jpg" class="img-fluid" style="height: 85%">
+				</div>
+				<div class="col-lg-8 col-md-7 col-sm-12">
+					<p class="about-welcome">Welcome to</p>
+					<h1 class="about-title">F2L Engineering</h1>
+					<hr>
+					<p class="mt-5 service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Quisquam nesciunt enim
+						obcaecati eaque
+						corporis accusamus culpa, eius, provident deleniti voluptates labore mollitia animi laborum in
+						sapiente molestias recusandae officiis libero!</p>
+
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- section service -->
+	<section id="service" class="my-5 py-5 bg-custom-1">
+		<div class="container">
+			<h1 class="display-4">OUR SERVICES</h1>
+			<hr>
+			<p class="mt-3 service-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, quo.
+				Veniam laborum enim ut rerum
+				soluta
+				et omnis ullam modi aspernatur unde sed expedita, nisi tempora nesciunt voluptatum assumenda eum!</p>
+			<div class="row mt-5">
+				<div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+					<div class="card" style="width: 18rem;">
+						<img src="images/pic4.jpg" alt="" class="img-fluid">
+						<div class="card-body service-description">
+							<h5 class="card-title">Renovation</h5>
+							<p class="card-text">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus placeat libero
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+					<div class="card" style="width: 18rem;">
+						<img src="images/pic2.jpg" alt="" class="img-fluid">
+						<div class="card-body service-description">
+							<h5 class="card-title">Renovation</h5>
+							<p class="card-text">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus placeat libero
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+					<div class="card" style="width: 18rem;">
+						<img src="images/pic4.jpg" alt="" class="img-fluid">
+						<div class="card-body service-description">
+							<h5 class="card-title">Renovation</h5>
+							<p class="card-text">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus placeat libero
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer" style="background-color: #f5f5f5;">
+		<div class="row justify-content-center py-5">
+			<div class="col-lg-11">
+				<div class="row ">
+					<div class="col-lg-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+						<h3 class="text-muted bold-text">F2L ENGINEERING.</h3>
+					</div>
+					<div class="col-lg-2 col-md-4 col-sm-4 col-12">
+						<h6 class="mb-3 mb-lg-4 bold-text "><b>MENU</b></h6>
+						<ul class="list-unstyled">
+							<li>Home</li>
+							<li>About</li>
+							<li>Service</li>
+							<li>Team</li>
+							<li>Contact</li>
+						</ul>
+					</div>
+					<div class="col-lg-2 col-md-4 col-sm-4 col-12">
+						<h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>ADDRESS</b></h6>
+						<p class="mb-1">11 SAM LEONG ROAD <br>
+							#01-12 <br>
+							TRIO <br>
+							SINGAPORE(207903)</p>
+					</div>
+				</div>
+				<div class="row ">
+					<div class="col-lg-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+						<p class="social text-muted mb-0 pb-0 bold-text"> <span class="mx-2"><i class="fa fa-facebook"
+									aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-linkedin-square"
+									aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-twitter"
+									aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-instagram"
+									aria-hidden="true"></i></span> </p><small class="rights"><span>&#174;</span> 
+							<b><a class="site-design-develop" href="https://about.eyakub.me/" target="_blank">eyakub.me</a></b> All Rights Reserved.</small>
+					</div>
+					<div class="col-lg-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
+
+					</div>
+					<div class="col-lg-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
+						<h6 class="text-muted bold-text"><b>Email us</b></h6><small><span><i
+									class="fa fa-envelope" aria-hidden="true"></i></span>
+							sales@f2lengineering.com</small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+		crossorigin="anonymous"></script>
+
+	<!-- Option 2: Separate Popper and Bootstrap JS -->
+	<!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
 </body>
+
 </html>
