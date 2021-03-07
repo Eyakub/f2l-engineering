@@ -159,4 +159,14 @@
     max-width: 800px;
     margin: 10px auto;
   }
+
+  .about-title {
+    position: relative;
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 42px;
+    margin-top: 0;
+    text-transform: uppercase;
+  }
 }
