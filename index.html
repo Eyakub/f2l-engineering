@@ -117,12 +117,56 @@
             height: 2px;
             background-color: var(--ant-primary-color);
         }
-        .nav-toggle { display: none; /* Basic mobile nav, can be enhanced */ }
+        .nav-toggle { 
+            display: none; 
+            font-size: 1.5rem; 
+            background: none; 
+            border: none; 
+            cursor: pointer; 
+            color: var(--ant-text-color);
+            padding: 8px;
+        }
 
         @media (max-width: 768px) {
-            .main-nav .nav-links { display: none; /* Simplified for brevity, implement proper toggle */ }
-            .nav-toggle { display: block; font-size: 1.5rem; background: none; border: none; cursor: pointer; color: var(--ant-text-color); }
-            /* Full mobile nav would require more JS and CSS */
+            .main-nav .nav-links { 
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--ant-background-color-base);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                flex-direction: column;
+                padding: 20px;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 999;
+            }
+            
+            .main-nav .nav-links.nav-active-mobile {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .main-nav .nav-links li {
+                margin: 0 0 16px 0;
+            }
+            
+            .main-nav .nav-links a {
+                display: block;
+                padding: 12px 0;
+                border-bottom: 1px solid var(--ant-border-color-base);
+            }
+            
+            .main-nav .nav-links a:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-toggle { 
+                display: block; 
+            }
         }
 
 
@@ -615,15 +659,17 @@
     <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // --- Simple Mobile Nav Toggle (Placeholder) ---
+        // --- Mobile Nav Toggle ---
         const navToggle = document.querySelector('.nav-toggle');
         const navMenu = document.querySelector('.main-nav .nav-links');
         if (navToggle && navMenu) {
             navToggle.addEventListener('click', () => {
-                // For a real implementation, you'd toggle a class on navMenu to display it.
-                // e.g., navMenu.classList.toggle('nav-active-mobile');
-                // And add corresponding CSS for .nav-active-mobile
-                alert('Mobile navigation toggle clicked. Implement full functionality.');
+                navMenu.classList.toggle('nav-active-mobile');
+                
+                // Update button text/icon for better UX
+                const isOpen = navMenu.classList.contains('nav-active-mobile');
+                navToggle.innerHTML = isOpen ? '✕' : '☰';
+                navToggle.setAttribute('aria-expanded', isOpen);
             });
         }
         // Close nav on link click if mobile menu is open
