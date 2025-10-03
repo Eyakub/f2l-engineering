@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F2L Engineering PTE. LTD. - Renovation & Specialized Works</title>
+
+    <!-- Pico.css CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
+    <!-- Optional: Pico.css fluid grids and containers (if you prefer over fixed) -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.min.css"/> -->
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #007bff; /* A standard blue, change as needed */
+            --primary-hover-color: #0056b3;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --nav-height: 60px;
+        }
+
+        /* Apply a more modern font if desired, Pico default is system UI */
+        /* body { font-family: 'Inter', sans-serif; } */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            padding-top: var(--nav-height);
+            color: var(--text-color);
+        }
+
+        /* --- Navigation --- */
+        .main-nav {
+            background-color: white;
+            padding: 0 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: var(--nav-height);
+            display: flex; /* Use flexbox for alignment */
+            align-items: center; /* Vertically center items */
+        }
+        .main-nav .container { /* Pico's container for alignment */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .main-nav ul li {
+            margin-left: 1.5rem;
+        }
+        .main-nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 0.5rem 0; /* Vertical padding for easier clicking */
+        }
+        .main-nav ul li a:hover,
+        .main-nav ul li a.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .main-nav .brand {
+            font-weight: bold;
+            font-size: 1.25rem;
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        /* Mobile Nav Toggle (Simple CSS for this example) */
+        .nav-toggle {
+            display: none; /* Hidden by default */
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .main-nav .container {
+                flex-wrap: wrap; /* Allow brand and toggle to be on one line, menu below */
+            }
+            .main-nav ul {
+                display: none; /* Hide menu by default on mobile */
+                flex-direction: column;
+                width: 100%;
+                background-color: white;
+                padding: 1rem 0;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1) inset;
+            }
+            .main-nav ul.nav-active {
+                display: flex; /* Show when active */
+            }
+            .main-nav ul li {
+                margin: 0.5rem 0;
+                text-align: center;
+            }
+            .nav-toggle {
+                display: block; /* Show toggle button */
+            }
+        }
+
+
+        /* --- Hero Section --- */
+        .hero {
+            background-image: url('https://via.placeholder.com/1920x1080/cccccc/808080?text=Modern+Renovation+Site'); /* Replace */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+        .hero h1 {
+            font-size: 2.5rem; /* Pico uses rem */
+            margin-bottom: 0.5rem;
+            color: white; /* Override Pico's heading color if needed */
+        }
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: white; /* Override Pico's p color if needed */
+        }
+        .hero .button, .hero button { /* Style Pico button in hero */
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+        }
+        .hero .button:hover, .hero button:hover {
+            background-color: var(--primary-hover-color);
+            border-color: var(--primary-hover-color);
+        }
+
+
+        /* --- Sections --- */
+        section {
+            padding: 3rem 0; /* Use rem for spacing */
+        }
+        section:nth-of-type(even) { /* Alternate background for sections */
+            background-color: var(--light-bg);
+        }
+        section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        /* --- About Section --- */
+        .about-content {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .about-content img {
+            max-width: 45%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+        .about-content .text {
+            flex: 1;
+        }
+        .about-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .about-content ul li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .about-content ul li::before {
+            content: '✓'; /* Checkmark */
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            .about-content img {
+                max-width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+
+
+        /* --- Services Section --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .service-card .card-content {
+            padding: 1.5rem;
+            flex-grow: 1; /* Allows card content to fill space if cards are uneven */
+        }
+        .service-card h5 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+
+        /* --- Team Section --- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+        .team-member {
+            background-color: #fff; /* Team cards might not need alternate bg */
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid var(--primary-color);
+        }
+        .team-member h5 {
+            margin-bottom: 0.25rem;
+            color: var(--primary-color);
+        }
+        .team-member p.role {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 0.5rem;
+        }
+
+
+        /* --- Contact Section --- */
+        #contact form {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        /* Pico styles forms well, but we can ensure button prominence */
+        #contact form button[type="submit"] {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            width: 100%; /* Make button full width on mobile, or wider */
+            padding: 0.75rem;
+        }
+        #contact form button[type="submit"]:hover {
+            background-color: var(--primary-hover-color);
+            border-color: var(--primary-hover-color);
+        }
+        .form-message { margin-top: 1rem; }
+        /* Pico handles invalid states, but you can customize: */
+        /* input:invalid, textarea:invalid { border-color: var(--pico-form-element-invalid-border-color); } */
+
+
+        /* --- Footer --- */
+        .site-footer {
+            background-color: #333;
+            color: #ccc;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .site-footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .site-footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .site-footer a:hover {
+            text-decoration: underline;
+        }
+        .social-icons a {
+            margin: 0 0.5rem;
+            font-size: 1.5rem; /* Pico doesn't have icons, you'd use <img> or font icons */
+            color: #fff;
+        }
+        /* For placeholder social icons if not using a library */
+        .social-icons span {
+            display: inline-block;
+            width: 30px; height: 30px;
+            background-color: #555;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-size: 0.8rem;
+        }
+
+        /* Pico Utility: Container (optional if not using pico.fluid.css) */
+        .container {
+          max-width: 1100px; /* Or your preferred max-width */
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="container">
+            <a href="#home" class="brand">F2L Engineering</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button> <!-- Hamburger Icon -->
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>F2L Engineering PTE. LTD.</h1>
+            <p>Your trusted experts in Renovation, Demolition, Floor Heating, Vinyl Flooring & Carpet, Painting, Silling & Partition, and Glass Door & Panel work.</p>
+            <a href="#services" role="button" class="button">Explore Our Services</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <article class="about-content">
+                    <img src="https://via.placeholder.com/500x350/e0e0e0/707070?text=F2L+Project" alt="F2L Engineering Project Example">
+                    <div class="text">
+                        <p><strong>F2L Engineering PTE. LTD.</strong> is your premier partner for a comprehensive range of construction and renovation services. We are committed to delivering exceptional quality, innovative solutions, and unparalleled customer satisfaction on every project.</p>
+                        <p>Our core expertise includes:</p>
+                        <ul>
+                            <li>Comprehensive Renovation</li>
+                            <li>Safe & Efficient Demolition</li>
+                            <li>Advanced Floor Heating Systems</li>
+                            <li>Vinyl Flooring and Carpet Installation</li>
+                            <li>Professional Painting Services</li>
+                            <li>Silling and Partition Works</li>
+                            <li>Custom Glass Door and Panel Solutions</li>
+                        </ul>
+                        <p>We approach each task with meticulous attention to detail, ensuring durability and aesthetic excellence.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <img src="https://via.placeholder.com/400x250/dcdcdc/606060?text=Renovation" alt="Renovation">
+                        <div class="card-content">
+                            <h5>Renovation</h5>
+                            <p>Transforming spaces with complete residential and commercial renovation solutions.</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://via.placeholder.com/400x250/dcdcdc/606060?text=Demolition" alt="Demolition">
+                        <div class="card-content">
+                            <h5>Demolition</h5>
+                            <p>Expert, safe, and efficient demolition services for all types of structures.</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://via.placeholder.com/400x250/dcdcdc/606060?text=Floor+Heating" alt="Floor Heating">
+                        <div class="card-content">
+                            <h5>Floor Heating</h5>
+                            <p>Installation of comfortable and energy-efficient underfloor heating systems.</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://via.placeholder.com/400x250/dcdcdc/606060?text=Vinyl+&+Carpet" alt="Vinyl Flooring and Carpet">
+                        <div class="card-content">
+                            <h5>Vinyl Flooring and Carpet</h5>
+                            <p>Professional supply and installation of various vinyl and carpet flooring options.</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://via.placeholder.com/400x250/dcdcdc/606060?text=Painting" alt="Painting">
+                        <div class="card-content">
+                            <h5>Painting</h5>
+                            <p>High-quality interior and exterior painting services for a flawless finish.</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://via.placeholder.com/400x250/dcdcdc/606060?text=Silling+Partition" alt="Silling and Partition">
+                        <div class="card-content">
+                            <h5>Silling and Partition</h5>
+                            <p>Custom ceiling (silling) designs and functional partition wall installations.</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://via.placeholder.com/400x250/dcdcdc/606060?text=Glass+Work" alt="Glass Door and Panel work">
+                        <div class="card-content">
+                            <h5>Glass Door and Panel work</h5>
+                            <p>Elegant and modern glass door, window, and panel solutions.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team">
+            <div class="container">
+                <h2>Meet Our Team</h2>
+                <div class="team-grid">
+                    <article class="team-member">
+                        <img src="https://via.placeholder.com/150/c0c0c0/505050?text=Team+1" alt="Team Member 1">
+                        <h5>[Name Placeholder]</h5>
+                        <p class="role">Lead Engineer</p>
+                        <p>Bio placeholder text. Dedicated and experienced professional leading our technical projects.</p>
+                    </article>
+                    <article class="team-member">
+                        <img src="https://via.placeholder.com/150/c0c0c0/505050?text=Team+2" alt="Team Member 2">
+                        <h5>[Name Placeholder]</h5>
+                        <p class="role">Project Manager</p>
+                        <p>Bio placeholder text. Ensures all projects are delivered on time and to the highest standards.</p>
+                    </article>
+                    <article class="team-member">
+                        <img src="https://via.placeholder.com/150/c0c0c0/505050?text=Team+3" alt="Team Member 3">
+                        <h5>[Name Placeholder]</h5>
+                        <p class="role">Client Relations</p>
+                        <p>Bio placeholder text. Your main point of contact, dedicated to your complete satisfaction.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <form id="contactForm" novalidate>
+                    <label for="contactName">Name
+                        <input type="text" id="contactName" name="name" placeholder="Your Name" required>
+                        <small class="error-message" aria-live="polite"></small>
+                    </label>
+
+                    <label for="contactEmail">Email
+                        <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required>
+                        <small class="error-message" aria-live="polite"></small>
+                    </label>
+
+                    <label for="contactPhone">Phone (Optional)
+                        <input type="tel" id="contactPhone" name="phone" placeholder="Your Phone Number">
+                    </label>
+
+                    <label for="contactMessage">Message
+                        <textarea id="contactMessage" name="message" rows="5" placeholder="Your message..." required></textarea>
+                        <small class="error-message" aria-live="polite"></small>
+                    </label>
+
+                    <button type="submit">Send Message</button>
+                </form>
+                <div id="formSubmissionMessage" class="form-message" aria-live="assertive"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p><strong>F2L Engineering PTE. LTD.</strong></p>
+            <p>11 SAM LEONG ROAD, #01-12, TRIO, SINGAPORE (207903)</p>
+            <p>Email: <a href="mailto:sales@f2lengineering.com">sales@f2lengineering.com</a></p>
+            <p>Phone: <a href="tel:+6512345678">+65 1234 5678</a> (Replace with actual number)</p>
+            <div class="social-icons">
+                <!-- Replace with actual icons (e.g., <img> or SVG or a font icon library) -->
+                <a href="#" aria-label="Facebook"><span title="Facebook">FB</span></a>
+                <a href="#" aria-label="LinkedIn"><span title="LinkedIn">LI</span></a>
+                <a href="#" aria-label="Instagram"><span title="Instagram">IN</span></a>
+            </div>
+            <p>&copy; <span id="currentYear"></span> F2L Engineering PTE. LTD. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Dynamic Year for Footer ---
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // --- Simple Mobile Navigation Toggle ---
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('nav-active');
+                const isExpanded = navLinks.classList.contains('nav-active');
+                navToggle.setAttribute('aria-expanded', isExpanded);
+            });
+            // Close nav when a link is clicked (for SPA feel)
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('nav-active')) {
+                        navLinks.classList.remove('nav-active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        }
+        
+        // --- Active Nav Link Highlighting on Scroll (Simplified) ---
+        const sections = document.querySelectorAll('section[id], header[id]');
+        const navLi = document.querySelectorAll('.main-nav .nav-links li a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                // Adjust offset to trigger active state a bit earlier if nav is tall
+                if (pageYOffset >= (sectionTop - (document.querySelector('.main-nav').offsetHeight * 1.5) ) ) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLi.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href').substring(1) === current) {
+                    a.classList.add('active');
+                }
+            });
+            // Default to home if at the very top
+            if (window.pageYOffset < (sections[0].offsetTop / 2) ) {
+                 navLi.forEach(a => a.classList.remove('active'));
+                 document.querySelector('.main-nav .nav-links li a[href="#home"]').classList.add('active');
+            }
+        });
+
+
+        // --- Contact Form Validation and Submission ---
+        const contactForm = document.getElementById('contactForm');
+        const formSubmissionMessage = document.getElementById('formSubmissionMessage');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default submission
+
+                let isValid = true;
+                formSubmissionMessage.innerHTML = ''; // Clear previous messages
+
+                // --- Custom Validation Logic (Pico also adds its own styles) ---
+                const nameInput = document.getElementById('contactName');
+                const emailInput = document.getElementById('contactEmail');
+                const messageInput = document.getElementById('contactMessage');
+
+                // Helper to show error
+                function showError(inputElement, message) {
+                    inputElement.setAttribute('aria-invalid', 'true');
+                    const errorContainer = inputElement.parentElement.querySelector('.error-message');
+                    if (errorContainer) errorContainer.textContent = message;
+                    isValid = false;
+                }
+                // Helper to clear error
+                function clearError(inputElement) {
+                    inputElement.setAttribute('aria-invalid', 'false');
+                     const errorContainer = inputElement.parentElement.querySelector('.error-message');
+                    if (errorContainer) errorContainer.textContent = '';
+                }
+
+                // Validate Name
+                if (nameInput.value.trim() === '') {
+                    showError(nameInput, 'Name is required.');
+                } else {
+                    clearError(nameInput);
+                }
+
+                // Validate Email
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (emailInput.value.trim() === '') {
+                    showError(emailInput, 'Email is required.');
+                } else if (!emailPattern.test(emailInput.value.trim())) {
+                    showError(emailInput, 'Please enter a valid email address.');
+                } else {
+                    clearError(emailInput);
+                }
+
+                // Validate Message
+                if (messageInput.value.trim() === '') {
+                    showError(messageInput, 'Message is required.');
+                } else {
+                    clearError(messageInput);
+                }
+                // --- End Custom Validation ---
+
+
+                if (isValid) {
+                    const name = nameInput.value.trim();
+                    const email = emailInput.value.trim();
+                    const phone = document.getElementById('contactPhone').value.trim();
+                    const message = messageInput.value.trim();
+
+                    console.log("Form Submitted (via custom JS):");
+                    console.log("Name:", name);
+                    console.log("Email:", email);
+                    console.log("Phone:", phone);
+                    console.log("Message:", message);
+
+                    formSubmissionMessage.innerHTML = `<article role="alert" style="background-color: var(--pico-success-background); border-left-color: var(--pico-success);">Thank you, ${name}! Your message has been received (logged to console).</article>`;
+                    contactForm.reset(); // Clear the form
+                     // Clear all error states explicitly
+                    [nameInput, emailInput, messageInput].forEach(clearError);
+
+
+                    // --- Optional: mailto link ---
+                    /*
+                    const subject = encodeURIComponent("Website Inquiry from " + name);
+                    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\n\nMessage:\n${message}`);
+                    window.location.href = `mailto:sales@f2lengineering.com?subject=${subject}&body=${body}`;
+                    formSubmissionMessage.innerHTML = `<article role="alert">Your email client should open. Please send the prepared message.</article>`;
+                    contactForm.reset();
+                    [nameInput, emailInput, messageInput].forEach(clearError);
+                    */
+
+                } else {
+                    formSubmissionMessage.innerHTML = `<article role="alert" style="background-color: var(--pico-error-background); border-left-color: var(--pico-error-focus);">Please correct the errors above.</article>`;
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F2L Engineering PTE. LTD. - Renovation & Demolition Experts</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        /* Custom CSS */
+        body {
+            padding-top: 56px; /* Adjust if navbar height changes */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hero-section {
+            background-image: url('https://via.placeholder.com/1920x1080.png?text=Modern+Interior+Renovation'); /* Replace with your hero image */
+            background-size: cover;
+            background-position: center;
+            height: 90vh; /* Adjust as needed */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px; /* Increased width for longer tagline */
+        }
+
+        .hero-content h1 {
+            font-size: 3rem; /* Adjusted for longer company name */
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.3rem; /* Adjusted for more services */
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-content .intro {
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .service-card, .team-member-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden; /* Ensures rounded corners for images */
+            height: 100%; /* Makes cards in a row same height */
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover, .team-member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px; /* Fixed height for service images */
+            object-fit: cover;
+        }
+        .team-member-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 20px auto 10px; /* Center image */
+        }
+
+        .card-body-content {
+            padding: 20px;
+            flex-grow: 1; /* Allows card body to fill space */
+        }
+        .card-body-content h5 {
+            color: #0d6efd; /* Bootstrap primary blue */
+            font-weight: bold;
+        }
+        .team-member-card .card-body-content {
+            text-align: center;
+        }
+
+        .bg-light-custom {
+            background-color: #f8f9fa !important; /* Bootstrap bg-light */
+        }
+        
+        .footer {
+            background-color: #212529; /* Bootstrap dark */
+            color: #f8f9fa; /* Light text */
+            padding: 40px 0 20px;
+        }
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+        .footer a {
+            color: #adb5bd; /* Lighter gray for links */
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+        .footer .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="70">
+
+    <!-- Navigation Bar -->
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">F2L Engineering</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>F2L Engineering PTE. LTD.</h1>
+            <p class="tagline">Your Partner for Expert Renovation, Demolition, Flooring, Painting, Partitions & Glass Work.</p>
+            <p class="intro">
+                We specialize in transforming spaces with a comprehensive suite of services including renovation, demolition, floor heating, vinyl flooring & carpet installation, professional painting, silling & partition construction, and elegant glass door & panel work.
+            </p>
+             <a href="#services" class="btn btn-primary btn-lg mt-3">Explore Our Services</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2>About F2L Engineering PTE. LTD.</h2>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="https://via.placeholder.com/500x350.png?text=F2L+Project+Showcase" alt="F2L Engineering Project Showcase" class="img-fluid rounded shadow-sm mb-4 mb-md-0">
+            </div>
+            <div class="col-md-6">
+                <p class="lead">F2L Engineering PTE. LTD. is a dedicated provider of high-quality construction and renovation solutions in Singapore. We pride ourselves on delivering excellence, precision, and reliability in every project we undertake.</p>
+                <p>Our experienced team is committed to client satisfaction, ensuring projects are completed on time, within budget, and to the highest standards. We leverage modern techniques and a keen eye for detail to bring your vision to life.</p>
+                <h5>Our Key Specializations:</h5>
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Comprehensive Renovation</li>
+                    <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Safe & Efficient Demolition</li>
+                    <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Advanced Floor Heating Systems</li>
+                    <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Vinyl Flooring and Carpet Installation</li>
+                    <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Professional Painting Services</li>
+                    <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Silling and Partition Works</li>
+                    <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Custom Glass Door and Panel Solutions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-light-custom">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="row gy-4 justify-content-center">
+                <!-- Service Item 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <img src="https://via.placeholder.com/400x250.png?text=Renovation" alt="Renovation Service">
+                        <div class="card-body-content">
+                            <h5>Renovation</h5>
+                            <p>Complete interior and exterior renovation services for residential and commercial properties, tailored to your needs.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service Item 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <img src="https://via.placeholder.com/400x250.png?text=Demolition" alt="Demolition Service">
+                        <div class="card-body-content">
+                            <h5>Demolition</h5>
+                            <p>Expert and safe demolition services, including structural demolition, site clearing, and debris removal.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service Item 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <img src="https://via.placeholder.com/400x250.png?text=Floor+Heating" alt="Floor Heating Service">
+                        <div class="card-body-content">
+                            <h5>Floor Heating</h5>
+                            <p>Installation of modern and energy-efficient underfloor heating systems for ultimate comfort.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service Item 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <img src="https://via.placeholder.com/400x250.png?text=Vinyl+Flooring" alt="Vinyl Flooring and Carpet Service">
+                        <div class="card-body-content">
+                            <h5>Vinyl Flooring and Carpet</h5>
+                            <p>Professional installation of a wide range of vinyl flooring and plush carpets to enhance your space.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service Item 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <img src="https://via.placeholder.com/400x250.png?text=Painting" alt="Painting Service">
+                        <div class="card-body-content">
+                            <h5>Painting</h5>
+                            <p>High-quality interior and exterior painting services with meticulous preparation and flawless finishes.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service Item 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <img src="https://via.placeholder.com/400x250.png?text=Silling+Partition" alt="Silling and Partition Service">
+                        <div class="card-body-content">
+                            <h5>Silling and Partition</h5>
+                            <p>Custom silling (ceiling) solutions and partition wall construction for optimal space utilization and design.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service Item 7 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <img src="https://via.placeholder.com/400x250.png?text=Glass+Door" alt="Glass Door and Panel work Service">
+                        <div class="card-body-content">
+                            <h5>Glass Door and Panel work</h5>
+                            <p>Design and installation of elegant glass doors, panels, and partitions for a modern aesthetic.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="container">
+        <h2>Meet Our Core Team</h2>
+        <p class="text-center lead mb-5">Dedicated professionals ensuring your project's success.</p>
+        <div class="row gy-4 justify-content-center">
+            <!-- Team Member 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="team-member-card">
+                    <img src="https://via.placeholder.com/150x150.png?text=Project+Manager" alt="Team Member - Project Manager">
+                    <div class="card-body-content">
+                        <h5>[Name Placeholder]</h5>
+                        <p class="text-muted">Senior Project Manager</p>
+                        <p>Oversees all project phases, ensuring quality and timely completion with expert coordination.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="team-member-card">
+                    <img src="https://via.placeholder.com/150x150.png?text=Lead+Technician" alt="Team Member - Lead Technician">
+                    <div class="card-body-content">
+                        <h5>[Name Placeholder]</h5>
+                        <p class="text-muted">Lead Technical Specialist</p>
+                        <p>Brings technical expertise and hands-on skill to ensure precision in every installation and build.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Team Member 3 (Optional) -->
+            <div class="col-md-6 col-lg-4">
+                <div class="team-member-card">
+                    <img src="https://via.placeholder.com/150x150.png?text=Client+Relations" alt="Team Member - Client Relations">
+                    <div class="card-body-content">
+                        <h5>[Name Placeholder]</h5>
+                        <p class="text-muted">Client Relations Manager</p>
+                        <p>Your primary point of contact, dedicated to understanding your needs and ensuring satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-light-custom">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p class="text-center mb-4">Have a project in mind or need a consultation? Fill out the form below, and we'll get back to you promptly.</p>
+                    <form id="contactForm" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="contactName" placeholder="Your Full Name" required>
+                            <div class="invalid-feedback">
+                                Please enter your name.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="contactEmail" placeholder="your.email@example.com" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactPhone" class="form-label">Phone Number (Optional)</label>
+                            <input type="tel" class="form-control" id="contactPhone" placeholder="Your Phone Number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="contactMessage" rows="5" placeholder="Describe your project or inquiry..." required></textarea>
+                            <div class="invalid-feedback">
+                                Please enter your message.
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg px-5">Send Message</button>
+                        </div>
+                    </form>
+                    <div id="formMessage" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <h5 class="mb-3">F2L Engineering PTE. LTD.</h5>
+            <p>11 SAM LEONG ROAD, #01-12, TRIO, SINGAPORE (207903)</p>
+            <p>Email: <a href="mailto:sales@f2lengineering.com">sales@f2lengineering.com</a></p>
+            <p>Phone: <a href="tel:+65XXXXXXXX">[Your Phone Number Here]</a></p> {/* Add your phone number */}
+            <div class="social-icons my-3">
+                <a href="#" aria-label="Facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Instagram" title="Instagram"><i class="bi bi-instagram"></i></a>
+                {/* Add more social links as needed */}
+            </div>
+            <p class="mb-0">&copy; <span id="currentYear"></span> F2L Engineering PTE. LTD. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle CDN (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Bootstrap 5 Form Validation
+        (() => {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    } else {
+                        event.preventDefault(); 
+                        handleFormSubmit(form);
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+
+        function handleFormSubmit(form) {
+            const name = form.querySelector('#contactName').value;
+            const email = form.querySelector('#contactEmail').value;
+            const phone = form.querySelector('#contactPhone').value;
+            const message = form.querySelector('#contactMessage').value;
+            const formMessageDiv = document.getElementById('formMessage');
+
+            // For demo purposes: Log to console
+            console.log("Form Submitted:");
+            console.log("Name:", name);
+            console.log("Email:", email);
+            console.log("Phone:", phone);
+            console.log("Message:", message);
+
+            // Display a success message on the page
+            formMessageDiv.innerHTML = `
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    Thank you, <strong>${name}</strong>! Your message has been received. We will contact you at ${email} shortly. (This is a demo - data logged to console).
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            `;
+            
+            // Option 1: Reset the form
+            form.reset();
+            form.classList.remove('was-validated');
+
+            // Option 2: Mailto link (uncomment to use, and comment out console log and success message above if preferred)
+            /*
+            const subject = encodeURIComponent("Website Inquiry from " + name);
+            const body = encodeURIComponent(
+                `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\n\nMessage:\n${message}`
+            );
+            window.location.href = `mailto:sales@f2lengineering.com?subject=${subject}&body=${body}`;
+            // After mailto, you might want to reset the form or provide a simpler confirmation
+            // form.reset();
+            // form.classList.remove('was-validated');
+            // formMessageDiv.innerHTML = `<div class="alert alert-info">Your email client should open. Please send the prepared message.</div>`;
+            */
+        }
+        
+        // Activate Bootstrap scrollspy on the main nav element
+        const mainNav = document.body.querySelector('#mainNav');
+        if (mainNav) {
+            new bootstrap.ScrollSpy(document.body, {
+                target: '#mainNav',
+                offset: 70, // Adjust this value based on your navbar height + a little buffer
+            });
+        };
+
+        // Optional: Close responsive navbar when a nav link is clicked
+        const navLinks = document.querySelectorAll('.nav-link');
+        const menuToggle = document.getElementById('navbarNav');
+        // Ensure menuToggle exists and is a collapsable element
+        if (menuToggle) {
+            const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
+            navLinks.forEach((l) => {
+                l.addEventListener('click', () => {
+                    // Check if navbar is currently open (usually on smaller screens)
+                    if (menuToggle.classList.contains('show')) {
+                        bsCollapse.toggle();
+                    }
+                });
+            });
+        }
+
+    </script>
+</body>
+</html>
