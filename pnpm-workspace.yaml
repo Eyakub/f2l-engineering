@@ -1,0 +1,9 @@
+# Not a monorepo — pnpm 11 reads build-script approvals from this file and
+# requires a packages field whenever it is present.
+packages:
+  - .
+
+# sharp is only used by next/image optimization, which is disabled for the
+# static export (images.unoptimized), so its install script is not needed.
+allowBuilds:
+  sharp: false
